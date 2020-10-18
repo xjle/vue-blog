@@ -1,10 +1,11 @@
-@font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1603009374883'); /* IE9 */
-  src: url('iconfont.eot?t=1603009374883#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAOQAAsAAAAAB4AAAANBAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcAqDEIJPATYCJAMICwYABCAFhG0HLBtxBsgekiQPEwIKUFAFOWRAPHzt9zt3337DLIlox6toiCRtRDIJIkMlBUJmiGQ8ZOZP5lrptKiULh5U5LWerHga4MRUXvIyqQKu/7mc3ijx+YFymmPxUS/AeGtgY00KKNACCczjhrELWuJ+Ag36JWK2qxs7gaPMHBaIc51GARwzGrkhP1SFcsXcLB5QTXfpGu6Dz8ef5XAkKRXMov2zKjUo/ZxsJbGj6qP0ENzpTGCLKDALyMRxpWUXG0VmsRrUCGcY2FZ+8Dn5/3+Ps9kfHkGUmblNoBdyronr8C41N4EMW28Bj4Neknzi4tqpmXIu+kL2gwc9Dx92LDwac7Gmp+fg/ePBy09FrnPunFK94ZBkkWTZ9qj1F2MCFggrb2ZdDlsc87Bn4UZ+8XLJqlOZ6y5FzpvH3++8d695y4OEsvPWbwxcGqhYde/BA+b5LWv/7e55m3xH8XzCQmHhEiXoFLRoXfSN4gUrhZstLf/kfP6LAOWjw/+t+2XLmCrQuDSOuz7sZe+t4uq58jpQ1+Pj832HHwaKX2dFX1gt7vZ/t3f0LWmyW96EQt+n3X41QpXk28fnV0cEeGHQw9sf1wxz4a7D9AG1QxMMmxxbWpaP2cvLUhsKxsrY3LJeJq88I+/Pxt6R0+BW7zoW32BudMyuJ6HUsac+6qbL2I9//yeNaxVVsaAUQP1iccHG/ZXv+NljTJV5FH6tNmbwvidIGrjqF7NuNqB67tbgH3A7lmSNb8rTw3CQNblNuSQgi9vVgeno8GKoovuGE6Gq+7ZtFX0JFKpG0UyehZJGq1BWtQYNZtQsbtSJYEWuYdp4AKHNTkhavEChzXU0k59DSY9PUNYWLDQ4DZ81G42HzrmCIAVFaqgcDHUqixnbeuoc5rcjTZ9RQdL8gNKNiKjzw7Tk1Hy8BpkRmWKC2K9JpxRDTCwmWA0OQ0ajBVqJRY9UNFlLqTU/JQVXPSlZZTEBZ1sIRIFC1CClwSAdFQsz7FWmnAvvb4do9DFSIA2EKnM3hBDp2ofSJEvtgNZIzJ0It/KIqJ9GOorCIIywMIGqgQkxWhELyFrdSw9RoZJpB4Ss8qWgcrirJHl5mentVkEDU5nCSi+kcwQAAAAA') format('woff2'),
-  url('iconfont.woff?t=1603009374883') format('woff'),
-  url('iconfont.ttf?t=1603009374883') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-  url('iconfont.svg?t=1603009374883#iconfont') format('svg'); /* iOS 4.1- */
+@font-face {
+  font-family: 'iconfont';  /* project id 1923036 */
+  src: url('//at.alicdn.com/t/font_1923036_9ijr8vrgxch.eot');
+  src: url('//at.alicdn.com/t/font_1923036_9ijr8vrgxch.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1923036_9ijr8vrgxch.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1923036_9ijr8vrgxch.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1923036_9ijr8vrgxch.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1923036_9ijr8vrgxch.svg#iconfont') format('svg');
 }
 
 .iconfont {
@@ -16,6 +17,15 @@
 }
 
 .icon-le:before {
-  content: "\e689";
+  content: "\e689"; /*图标--乐 */
+}
+.icon-manage:before {
+  content: "\e66f"; /*后台管理 */
+}
+.icon-setting:before {
+  content: "\e615"; /*个人设置 */
+}
+.icon-logout:before {
+  content: "\e627"; /*退出登陆 */
 }
 
