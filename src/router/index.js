@@ -3,9 +3,9 @@ import VueRouter from 'vue-router'
 // import Manage from '@/views/manage/index.vue'
 // import Forget from '@/views/Forget.vue'
 // import Auth from '@/views/Auth.vue'
-const Manage = () => import('@/views/manage/index.vue')
-const Forget = () => import('@/views/Forget.vue')
-const Auth = () => import('@/views/Auth.vue')
+// const Manage = () => import('@/views/manage/index.vue')
+// const Forget = () => import('@/views/Forget.vue')
+// const Auth = () => import('@/views/Auth.vue')
 
 Vue.use(VueRouter)
 
@@ -36,7 +36,7 @@ const routes = [
   {
     path: '/manage',
     name: 'Manage',
-    component: Manage,
+    component: () => import('@/views/manage/index.vue'),
     children: [
       { path: '', component: () => import('@/views/manage/article.vue') },
       { path: 'user', component: () => import('@/views/manage/user.vue') }
@@ -45,12 +45,12 @@ const routes = [
   {
     path: '/auth',
     name: 'Auth',
-    component: Auth
+    component: () => import('@/views/Auth.vue')
   },
   {
     path: '/forget',
     name: 'Forget',
-    component: Forget
+    component: () => import('@/views/Forget.vue')
   }
 ]
 
