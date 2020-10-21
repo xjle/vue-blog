@@ -27,7 +27,7 @@ export default {
       Flag: false,
       lists: [
         { name: '个人设置', icon: 'icon-setting', url: '/', role: '0' },
-        { name: '后台管理', icon: 'icon-manage', url: '/manage/', role: '300' },
+        { name: '后台管理', icon: 'icon-manage', url: '/manage', role: '300' },
         { name: '退出登陆', icon: 'icon-logout', url: '', role: '0' }
       ]
     }

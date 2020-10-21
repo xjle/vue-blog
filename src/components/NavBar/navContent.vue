@@ -3,10 +3,10 @@
     <!-- <template> </template>
     <template> </template>
     <template> </template> -->
-    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-      <el-menu-item index="1">首页</el-menu-item>
-      <el-menu-item index="2">购物</el-menu-item>
-      <el-menu-item index="3">结算</el-menu-item>
+    <el-menu :default-active="$route.path"  class="el-menu-demo" mode="horizontal" @select="handleSelect" :router="true">
+      <el-menu-item index="/">首页</el-menu-item>
+      <el-menu-item index="/shop/">购物</el-menu-item>
+      <el-menu-item index="/settlement/">结算</el-menu-item>
     </el-menu>
   </div>
 </template>
@@ -15,7 +15,6 @@ export default {
   name: 'NavContent',
   data () {
     return {
-      activeIndex: '1'
     }
   },
   methods: {

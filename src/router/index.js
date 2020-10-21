@@ -1,18 +1,39 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Manage from '@/views/manage/index.vue'
+import Forget from '@/views/Forget.vue'
+import Auth from '@/views/Auth.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
+  // { path: '/', redirect: '/home' },
   {
     path: '/',
     name: 'Home',
-    component: () => import('@/views/home/index.vue')
+    component: () => import('@/views/index.vue'),
+    children: [
+      {
+        path: '',
+        name: 'Homepage',
+        component: () => import('@/views/homepage/index.vue')
+      },
+      {
+        path: '/settlement',
+        name: 'Settlement',
+        component: () => import('@/views/settlement/index.vue')
+      },
+      {
+        path: '/shop',
+        name: 'Shop',
+        component: () => import('@/views/shop/index.vue')
+      }
+    ]
   },
   {
     path: '/manage',
     name: 'Manage',
-    component: () => import(/* webpackChunkName: "manage" */ '@/views/manage/index.vue'),
+    component: Manage,
     children: [
       { path: '', component: () => import('@/views/manage/article.vue') },
       { path: 'user', component: () => import('@/views/manage/user.vue') }
@@ -21,12 +42,12 @@ const routes = [
   {
     path: '/auth',
     name: 'Auth',
-    component: () => import('@/views/Auth.vue')
+    component: Auth
   },
   {
     path: '/forget',
     name: 'Forget',
-    component: () => import('@/views/Forget.vue')
+    component: Forget
   }
 ]
 
