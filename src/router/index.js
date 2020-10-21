@@ -1,8 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Manage from '@/views/manage/index.vue'
-import Forget from '@/views/Forget.vue'
-import Auth from '@/views/Auth.vue'
+// import Manage from '@/views/manage/index.vue'
+// import Forget from '@/views/Forget.vue'
+// import Auth from '@/views/Auth.vue'
+const Manage = () => import('@/views/manage/index.vue')
+const Forget = () => import('@/views/Forget.vue')
+const Auth = () => import('@/views/Auth.vue')
 
 Vue.use(VueRouter)
 
