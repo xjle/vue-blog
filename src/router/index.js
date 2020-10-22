@@ -2,10 +2,10 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 // import Manage from '@/views/manage/index.vue'
 // import Forget from '@/views/Forget.vue'
-// import Auth from '@/views/Auth.vue'
+// import Auth from '@/views/auth/index.vue'
 // const Manage = () => import('@/views/manage/index.vue')
 // const Forget = () => import('@/views/Forget.vue')
-// const Auth = () => import('@/views/Auth.vue')
+// const Auth = () => import('@/views/auth/index.vue')
 
 Vue.use(VueRouter)
 
@@ -45,7 +45,7 @@ const routes = [
   {
     path: '/auth',
     name: 'Auth',
-    component: () => import('@/views/Auth.vue')
+    component: () => import('@/views/auth/index.vue')
   },
   {
     path: '/forget',

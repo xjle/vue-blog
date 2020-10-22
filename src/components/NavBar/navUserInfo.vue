@@ -1,9 +1,9 @@
 <template>
   <div class="nav-user-info">
     <template v-if="Flag">
-      <el-button type="primary">登陆</el-button>
+      <el-button type="primary"  @click="btnGoAuth('login')">登陆</el-button>
       /
-      <el-button>注册</el-button>
+      <el-button @click="btnGoAuth('regester')">注册</el-button>
     </template>
     <template v-else>
         <el-popover  placement="bottom" width="200" trigger="click">
@@ -24,7 +24,7 @@ export default {
   name: 'NavUserInfo',
   data () {
     return {
-      Flag: false,
+      Flag: true,
       lists: [
         { name: '个人设置', icon: 'icon-setting', url: '/', role: '0' },
         { name: '后台管理', icon: 'icon-manage', url: '/manage', role: '300' },
@@ -33,6 +33,9 @@ export default {
     }
   },
   methods: {
+    btnGoAuth (val) {
+      this.$router.push({ name: 'Auth', params: { type: val } })
+    }
   }
 }
 </script>
