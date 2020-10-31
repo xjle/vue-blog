@@ -39,6 +39,7 @@
   </div>
 </template>
 <script>
+import { Register, RegisterCode } from '@/api/auth.js'
 export default {
   name: 'Register',
   data () {
@@ -79,12 +80,7 @@ export default {
       //  提交表单
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          console.log('111')
-          // if (this.api) {
-          //   this.getRegisterAdmin()
-          // } else {
-          //   this.getRegisterUser()
-          // }
+          this.getRegisterUser()
         } else {
           console.log('error submit!!')
           return false
@@ -95,24 +91,27 @@ export default {
       // 清空表单
       this.$refs[formName].resetFields()
     },
-    getRegisterAdmin () {
-      console.log('管理员')
-    },
     getRegisterUser () {
-      console.log('用户')
+      const data = this.registerForm
+      Register(data).then(res => {
+        if (res.data.status) {
+          console.log(1)
+        } else {
+          this.$message.error(res.data.msg)
+        }
+      })
     },
     getCode () {
       // 获取验证码
       if (this.registerForm.email) {
         const data = { email: this.registerForm.email }
-        console.log(data)
+        this.daoTime()
+        RegisterCode(data).then(res => {
+          this.$message.error(res.data.msg)
+        })
       } else {
         this.$message.error('请输入邮箱')
       }
-    },
-    btnChange (val) {
-      // 判断用户类型
-      console.log(1)
     },
     daoTime () {
       // 获取验证码间隔

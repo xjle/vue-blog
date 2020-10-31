@@ -26,6 +26,7 @@
   </div>
 </template>
 <script>
+import { Forget, getCode, SetCode, SetForget } from '@/api/forget.js'
 export default {
   name: 'Forget',
   data () {
@@ -48,9 +49,13 @@ export default {
     getCode () {
       // 获取验证码
       const data = { username: this.username }
-      console.log(data)
-
-      // this.daoTime()
+      getCode(data).then(res => {
+        if (!res.data.status) {
+          this.$message.error(res.data.msg)
+        } else {
+          this.daoTime()
+        }
+      })
     },
     submitForm () {
       if (this.username) {
@@ -70,19 +75,34 @@ export default {
     getForget () {
       // 判断是否注册
       const data = { username: this.username }
-      console.log(data)
-      this.active = 1
+      Forget(data).then(res => {
+        if (res.data.status) {
+          this.active = 1
+        } else {
+          this.$message.error(res.data.msg)
+        }
+      })
     },
     setForgetCode () {
       const data = { username: this.username, code: this.code }
-      console.log(data)
-      this.active = 3
+      SetCode(data).then(res => {
+        if (res.data.status) {
+          this.active = 3
+        } else {
+          this.$message.error(res.data.msg)
+        }
+      })
     },
     saveForget () {
       if (this.password && this.password.length >= 6 && this.password.length <= 10) {
         const data = { username: this.username, password: this.password }
-        console.log(data)
-        this.active = 4
+        SetForget(data).then(res => {
+          if (res.data.status) {
+            this.active = 4
+          } else {
+            this.$message.error(res.data.msg)
+          }
+        })
       } else {
         this.$message.error('密码长度在 6 到 10 个字符')
       }

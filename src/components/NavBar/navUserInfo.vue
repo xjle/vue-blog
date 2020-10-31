@@ -3,7 +3,7 @@
     <template v-if="Flag">
       <el-button type="primary"  @click="btnGoAuth('login')">登陆</el-button>
       /
-      <el-button @click="btnGoAuth('regester')">注册</el-button>
+      <el-button @click="btnGoAuth('register')">注册</el-button>
     </template>
     <template v-else>
         <el-popover  placement="bottom" width="200" trigger="click">

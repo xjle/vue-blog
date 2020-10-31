@@ -42,14 +42,14 @@
   </div>
 </template>
 <script>
+import { Login } from '@/api/auth.js'
 export default {
   name: 'Login',
   data () {
     return {
       loginForm: {
         username: '',
-        password: '',
-        type: 'user'
+        password: ''
       },
       rules: {
         username: [
@@ -73,13 +73,19 @@ export default {
         if (valid) {
           this.getLogin()
         } else {
-          console.log('error submit!!')
           return false
         }
       })
     },
     getLogin () {
-      console.log(1)
+      const data = this.loginForm
+      Login(data).then(res => {
+        if (res.data.status) {
+          console.log(res.data)
+        } else {
+          this.$message.error(res.data.msg)
+        }
+      })
     },
     resetForm (formName) {
       // 清除表单
