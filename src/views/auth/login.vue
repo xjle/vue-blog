@@ -82,6 +82,9 @@ export default {
       Login(data).then(res => {
         if (res.data.status) {
           console.log(res.data)
+          this.$store.commit('getToken', res.data.t)
+          // , params: { type: val }
+          this.$router.push({ name: 'Home' })
         } else {
           this.$message.error(res.data.msg)
         }

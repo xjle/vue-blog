@@ -7,7 +7,7 @@
     </template>
     <template v-else>
         <el-popover  placement="bottom" width="200" trigger="click">
-          <a slot="reference" class="n-name">1637898906@qq.com</a>
+          <a slot="reference" class="n-name">{{name}}</a>
           <ul class="info">
             <li v-for="(item, i) in lists" :key="i">
               <i class="iconfont" :class="item.icon"></i>
@@ -29,8 +29,14 @@ export default {
         { name: '个人设置', icon: 'icon-setting', url: '/', role: '0' },
         { name: '后台管理', icon: 'icon-manage', url: '/manage', role: '300' },
         { name: '退出登陆', icon: 'icon-logout', url: '/', role: '0' }
-      ]
+      ],
+      name: ''
     }
+  },
+  computed: {
+    // loginFlag () {
+    //   return this.$store.state.loginFlag
+    // }
   },
   methods: {
     btnGoAuth (val) {
